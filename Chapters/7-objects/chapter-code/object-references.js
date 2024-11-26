@@ -8,6 +8,9 @@ console.log(`${num1}, ${num2}`);
 num1 = 8;
 console.log(`${num1}, ${num2}`);
 
+
+
+/// object refrences
 let x = {
   num: 5,
 };
@@ -20,4 +23,4 @@ console.log(`x=${x.num} and y=${y.num}`);
 let p = { pop: "iujh" };
 let q = { pop: "iujh" };
 console.log(p == q); //false because it checks the addrss of refrences
-console.log(p===q); //false .. despite .. because it checks only the refreces in case of object .
+console.log(p === q); //false .. despite .. because it checks only the refreces in case of object .
