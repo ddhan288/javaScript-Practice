@@ -142,6 +142,9 @@
         win: 0,
         lost: 0,
         tie: 0,
+        displayScore: function () {
+          return `won : ${score.win} | lost:${score.lost} | ${score.tie}`;
+        },
       };
 
       // Function to get computer's random choice
@@ -196,7 +199,8 @@
         const scoreDisplay = document.getElementById("score");
         scoreDisplay.innerHTML = `Win: ${score.win} | Lost: ${score.lost} | Tie: ${score.tie}`;
         alert(
-          `You have chosen ${userMove}. Computer chose ${computerMove}. ${result}`
+          `You have chosen ${userMove}. Computer chose ${computerMove}. ${result}
+          ${score.displayScore()};`
         );
       }
 
