@@ -1,0 +1,19 @@
+button {
+  background-color: aqua;
+  color: black;
+}
+.add-to-bag {
+  background-color: rgb(162, 216, 162);
+  border-radius: 5px;
+  color: black;
+  border: none;
+  padding: 5px 15px;
+}
+#wishlist {
+  background-color: rgb(177, 172, 172);
+  border-radius: 5px;
+  color: black;
+  border: solid;
+  padding: 5px 15px;
+  text-transform: uppercase;
+}
