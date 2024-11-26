@@ -31,6 +31,7 @@ let { message, statuss } = currentStatus;
 console.log(message);
 console.log(statuss);
 
+//function to compare two functions are identical .
 function isIdenticalProduct(product, product2) {
   if (typeof product != "object" || product2 != "object") {
     console.warn(`parameter passed was not an object`);
