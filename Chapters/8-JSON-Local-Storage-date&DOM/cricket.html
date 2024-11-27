@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Cricket Game</title>
+    <link rel="stylesheet" href="./cricket.css" />
     <style>
       body {
         text-align: center;
@@ -13,34 +14,54 @@
     <h1>Bat Ball Stump Game</h1>
 
     <button
+      class="choice-button"
       onclick="
   let computerChoice = generateComputerChoice();
   let resultMsg = getResult('Bat', computerChoice);
   showResult('Bat', computerChoice, resultMsg);
   "
     >
-      Bat
+      <img
+        src="./images/Bat image for Cricket Game.png"
+        alt="bat"
+        class="choice-image"
+      />
     </button>
 
     <button
+      class="choice-button"
       onclick="
     computerChoice = generateComputerChoice();
     resultMsg = getResult('Ball', computerChoice);
     showResult('Ball', computerChoice, resultMsg);
   "
     >
-      Ball
+      <img
+        src="./images/Cricket Game Ball.png"
+        alt="ball"
+        class="choice-image"
+      />
     </button>
 
     <button
+      class="choice-button"
       onclick="
     computerChoice = generateComputerChoice();
     resultMsg = getResult('Stump', computerChoice);
     showResult('Stump', computerChoice, resultMsg);
   "
     >
-      Stump
+      <img
+        src="./images/Cricket Game Local Storage Image.png"
+        alt="stump"
+        class="choice-image"
+      />
     </button>
+
+    <h3 id="user-move"></h3>
+    <h3 id="computer-name"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
     <button
       onclick="localStorage.clear()
     resetScore();
@@ -48,10 +69,6 @@
     >
       Reset
     </button>
-    <h3 id="user-move"></h3>
-    <h3 id="computer-name"></h3>
-    <h3 id="result"></h3>
-    <h3 id="score"></h3>
 
     <script>
       let score;
