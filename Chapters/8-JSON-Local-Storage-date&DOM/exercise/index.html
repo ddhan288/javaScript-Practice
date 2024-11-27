@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #counter {
+        height: 80px;
+        width: 80px;
+      }
+      .js-odd {
+        background-color: brown;
+      }
+      .js-even {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="greetings">greetings</h3>
+    <button
+      id="counter"
+      class="js-even"
+      class="js-odd"
+      onclick=" 
+      doCount();
+    "
+    ></button>
+    <script>
+      function doGreeting(personName = "dear") {
+        let currentDate = new Date();
+        let currentHour = currentDate.getHours();
+        console.log(currentDate);
+        console.log(currentHour);
+        let heading = document.querySelector("#greetings");
+        let greetings = {
+          morning: "Good Morning",
+          afterNone: "good afternoon",
+          night: "good night",
+        };
+
+        if (currentHour > 5 && currentHour < 12) {
+          heading.innerHTML = "good morning";
+        } else if (currentHour > 12 && currentHour < 18) {
+          heading.innerHTML = `${greetings.afterNone} ${personName}`;
+        } else {
+          heading.innerHTML = `${greetings.night} `;
+        }
+      }
+      doGreeting("deepak");
+
+      let counter = localStorage.getItem("counter") || 0;
+      function doCount() {
+        counter++;
+        localStorage.setItem("counter", counter);
+        updateButton();
+      }
+
+      function updateButton() {
+        button = document.querySelector("#counter");
+
+        if (counter % 2 === 0) {
+          button.classList.remove("js-odd");
+          button.classList.add("js-even");
+        } else {
+          button.classList.remove("js-even");
+          button.classList.add("js-odd");
+        }
+
+        button.innerHTML = counter;
+      }
+      updateButton();
+    </script>
+  </body>
+</html>
