@@ -1,7 +1,9 @@
-let todoList = [
-  { item: "buy milk", dueDate: "12/04/2024" },
-  { item: "deepak", dueDate: "12/04/2024" },
-];
+// let todoList = [
+//   { item: "buy milk", dueDate: "12/04/2024" },
+//   { item: "deepak", dueDate: "12/04/2024" },
+// ];
+
+let todoList = JSON.parse(localStorage.getItem("todo")) || [];
 
 displayItems();
 function addTodo() {
@@ -9,13 +11,17 @@ function addTodo() {
   let inputDate = document.querySelector("#todo-date");
   let todoItem = inputElement.value;
   let todoDate = inputDate.value;
+  if (todoItem && todoDate) {
+    // console.log(todoItem);
+    todoList.push({ item: todoItem, dueDate: todoDate });
+    localStorage.setItem("todo", JSON.stringify(todoList));
+    inputElement.value = "";
+    inputElement.value = "";
 
-  console.log(todoItem);
-  todoList.push({ item: todoItem, dueDate: todoDate });
-
-  inputElement.value = "";
-  inputElement.value = "";
-  if (todoList.keys != undefined) displayItems();
+    displayItems();
+  } else {
+    alert("please enter both the task and due date ");
+  }
 }
 
 function displayItems() {
@@ -41,6 +47,7 @@ function displayItems() {
 
 function deleteTodo(index) {
   todoList.splice(index, 1);
+  localStorage.setItem("todo", JSON.stringify(todoList));
   displayItems();
 }
 
